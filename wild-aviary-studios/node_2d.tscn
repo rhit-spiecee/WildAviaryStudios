@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dhuthkhcg4wm4"]
+
+[node name="Node2D" type="Node2D" unique_id=80878556]
+
+[node name="Calypso" type="ColorRect" parent="." unique_id=537163826]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.10980392, 1, 1, 1)
+
+[node name="Spikes" type="Polygon2D" parent="." unique_id=296077714]
+position = Vector2(35, -69)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-363, -4, -339, -30, -322, -12, -299, -32, -279, -11, -246, -34, -228, -17, -197, -34, -175, -15, -148, -34, -130, -13, -102, -36, -79, -15, -53, -34, -30, -12, 0, -37, 31, -14, 71, -37, 92, -18, 124, -34, 152, -12, 186, -32, 211, -15, 248, -34, 271, -13, 313, -36, 329, -15, 357, -38, 373, -1, 373, -1)
