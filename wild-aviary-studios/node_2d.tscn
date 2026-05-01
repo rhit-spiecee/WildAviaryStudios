@@ -21,10 +21,12 @@ color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -517.3534, -139.37927, -501, -102)
 
 [node name="Strong_Enemy_1" type="Polygon2D" parent="." unique_id=360975081]
+position = Vector2(3532, -408)
 color = Color(1, 0.29803923, 1, 1)
 polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
 
 [node name="Boss" type="Polygon2D" parent="." unique_id=371283902]
+position = Vector2(7077, -362)
 color = Color(0.9529412, 0.40784314, 0, 1)
 polygon = PackedVector2Array(498, -204, 501, -301, 429, -337, 496, -396, 600, -396, 651, -351, 590, -301, 593, -185)
 
@@ -105,3 +107,34 @@ offset_top = -212.0
 offset_right = 10748.0
 offset_bottom = -120.0
 color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="Floor_7" type="ColorRect" parent="." unique_id=2112821486]
+offset_left = 1441.0
+offset_top = -282.0
+offset_right = 1970.0
+offset_bottom = -190.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="Floor_8" type="ColorRect" parent="." unique_id=516559695]
+offset_left = 2090.0
+offset_top = -549.0
+offset_right = 8856.0
+offset_bottom = -509.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="Strong_Enemy_2" type="Polygon2D" parent="." unique_id=1368827350]
+position = Vector2(5064, -408)
+color = Color(1, 0.29803923, 1, 1)
+polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
+
+[node name="Floor_9" type="ColorRect" parent="." unique_id=1984565661]
+offset_left = 5098.0
+offset_top = -635.0
+offset_right = 5627.0
+offset_bottom = -543.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="Strong_Enemy_3" type="Polygon2D" parent="." unique_id=722329513]
+position = Vector2(5662, -496)
+color = Color(1, 0.29803923, 1, 1)
+polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
