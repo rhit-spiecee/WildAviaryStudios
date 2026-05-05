@@ -1,13 +1,24 @@
 [gd_scene format=3 uid="uid://dhuthkhcg4wm4"]
 
+[ext_resource type="Script" uid="uid://bqojxtf4bbbb0" path="res://calypso_2.gd" id="1_wtcfe"]
+
 [node name="Node2D" type="Node2D" unique_id=80878556]
 
-[node name="Calypso" type="ColorRect" parent="." unique_id=537163826]
+[node name="Calypso2" type="CharacterBody2D" parent="." unique_id=1342976764]
+script = ExtResource("1_wtcfe")
+
+[node name="Camera2D" type="Camera2D" parent="Calypso2" unique_id=234483877]
+position = Vector2(1512, 65)
+position_smoothing_enabled = true
+
+[node name="Calypso" type="ColorRect" parent="Calypso2" unique_id=537163826]
 offset_left = 1493.0
 offset_top = 41.0
 offset_right = 1533.0
 offset_bottom = 81.0
 color = Color(0.10980392, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Calypso2" unique_id=1075848049]
 
 [node name="Spikes_1" type="Polygon2D" parent="." unique_id=296077714]
 position = Vector2(8990, 117)
