@@ -12,10 +12,10 @@ position = Vector2(1512, 65)
 position_smoothing_enabled = true
 
 [node name="Calypso" type="ColorRect" parent="Calypso2" unique_id=537163826]
-offset_left = 1493.0
-offset_top = 41.0
-offset_right = 1533.0
-offset_bottom = 81.0
+offset_left = 1491.0
+offset_top = 45.0
+offset_right = 1531.0
+offset_bottom = 85.0
 color = Color(0.10980392, 1, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Calypso2" unique_id=1075848049]
