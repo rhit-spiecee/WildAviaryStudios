@@ -2,14 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bqojxtf4bbbb0" path="res://calypso_2.gd" id="1_wtcfe"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+size = Vector2(37, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(10497, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(529, 83)
+
 [node name="Node2D" type="Node2D" unique_id=80878556]
 
 [node name="Calypso2" type="CharacterBody2D" parent="." unique_id=1342976764]
 script = ExtResource("1_wtcfe")
-
-[node name="Camera2D" type="Camera2D" parent="Calypso2" unique_id=234483877]
-position = Vector2(1512, 65)
-position_smoothing_enabled = true
 
 [node name="Calypso" type="ColorRect" parent="Calypso2" unique_id=537163826]
 offset_left = 1491.0
@@ -18,7 +23,13 @@ offset_right = 1531.0
 offset_bottom = 85.0
 color = Color(0.10980392, 1, 1, 1)
 
+[node name="Camera2D" type="Camera2D" parent="Calypso2" unique_id=234483877]
+position = Vector2(1512, 65)
+position_smoothing_enabled = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Calypso2" unique_id=1075848049]
+position = Vector2(1510.5, 65)
+shape = SubResource("RectangleShape2D_wtcfe")
 
 [node name="Spikes_1" type="Polygon2D" parent="." unique_id=296077714]
 position = Vector2(8990, 117)
@@ -46,13 +57,6 @@ position = Vector2(10931, -9)
 color = Color(0, 0.9647059, 0, 1)
 polygon = PackedVector2Array(635, -61, 635, -61, 773, -47, 795, 47, 738, 113, 622, 115, 548, 65)
 
-[node name="Floor_1" type="ColorRect" parent="." unique_id=250358777]
-offset_left = 1284.0
-offset_top = 108.0
-offset_right = 11781.0
-offset_bottom = 148.0
-color = Color(0.16862746, 0.4, 0.39607844, 1)
-
 [node name="Slash_Attack" type="Polygon2D" parent="." unique_id=1372779396]
 position = Vector2(-1471, 78)
 polygon = PackedVector2Array(1558, 41, 1619, 57, 1563, 85, 1598, 61)
@@ -61,13 +65,6 @@ polygon = PackedVector2Array(1558, 41, 1619, 57, 1563, 85, 1598, 61)
 position = Vector2(-1338, 89)
 color = Color(1, 0.22745098, 0.3254902, 1)
 polygon = PackedVector2Array(1651, 31, 1602, 32, 1601, 38, 1594, 26, 1605, 19, 1603, 24)
-
-[node name="Floor_2" type="ColorRect" parent="." unique_id=1824575031]
-offset_left = 2143.0
-offset_top = 25.0
-offset_right = 2672.0
-offset_bottom = 117.0
-color = Color(0.16862746, 0.4, 0.39607844, 1)
 
 [node name="Floor_3" type="ColorRect" parent="." unique_id=1020811222]
 offset_left = 6894.0
@@ -149,3 +146,29 @@ color = Color(0.16862746, 0.4, 0.39607844, 1)
 position = Vector2(5662, -496)
 color = Color(1, 0.29803923, 1, 1)
 polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
+
+[node name="StaticBodyFloor1" type="StaticBody2D" parent="." unique_id=1734973019]
+
+[node name="Floor_1" type="ColorRect" parent="StaticBodyFloor1" unique_id=250358777]
+offset_left = 1284.0
+offset_top = 108.0
+offset_right = 11781.0
+offset_bottom = 148.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor1" unique_id=894224618]
+position = Vector2(6532.5, 128)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="StaticBodyFloor2" type="StaticBody2D" parent="." unique_id=77894337]
+
+[node name="Floor_2" type="ColorRect" parent="StaticBodyFloor2" unique_id=1824575031]
+offset_left = 2143.0
+offset_top = 25.0
+offset_right = 2672.0
+offset_bottom = 117.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor2" unique_id=464887262]
+position = Vector2(2407.5, 66.5)
+shape = SubResource("RectangleShape2D_epypp")
