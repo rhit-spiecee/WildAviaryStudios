@@ -11,6 +11,18 @@ size = Vector2(10497, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(529, 83)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(529, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(530, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(210, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
+size = Vector2(552, 92)
+
 [node name="Node2D" type="Node2D" unique_id=80878556]
 
 [node name="Calypso2" type="CharacterBody2D" parent="." unique_id=1342976764]
@@ -57,21 +69,13 @@ position = Vector2(10931, -9)
 color = Color(0, 0.9647059, 0, 1)
 polygon = PackedVector2Array(635, -61, 635, -61, 773, -47, 795, 47, 738, 113, 622, 115, 548, 65)
 
-[node name="Slash_Attack" type="Polygon2D" parent="." unique_id=1372779396]
-position = Vector2(-1471, 78)
-polygon = PackedVector2Array(1558, 41, 1619, 57, 1563, 85, 1598, 61)
+[node name="Spear" type="Polygon2D" parent="." unique_id=2000447912]
+polygon = PackedVector2Array(57, 117, 100, 117, 107, 123, 102, 128, 57, 128)
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1114044642]
+[node name="Arrow" type="Polygon2D" parent="." unique_id=1114044642]
 position = Vector2(-1338, 89)
 color = Color(1, 0.22745098, 0.3254902, 1)
 polygon = PackedVector2Array(1651, 31, 1602, 32, 1601, 38, 1594, 26, 1605, 19, 1603, 24)
-
-[node name="Floor_3" type="ColorRect" parent="." unique_id=1020811222]
-offset_left = 6894.0
-offset_top = 25.0
-offset_right = 7423.0
-offset_bottom = 117.0
-color = Color(0.16862746, 0.4, 0.39607844, 1)
 
 [node name="Weak_Enemy_2" type="Polygon2D" parent="." unique_id=1227202487]
 position = Vector2(6920, 173)
@@ -85,13 +89,6 @@ scale = Vector2(0.9104478, 0.7625)
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -517.3534, -139.37927, -501, -102)
 
-[node name="Floor_4" type="ColorRect" parent="." unique_id=1756041611]
-offset_left = 8717.0
-offset_top = -83.0
-offset_right = 9246.0
-offset_bottom = 9.0
-color = Color(0.16862746, 0.4, 0.39607844, 1)
-
 [node name="Spikes_2" type="Polygon2D" parent="." unique_id=2053936750]
 position = Vector2(9717, 110)
 color = Color(1, 0, 0, 1)
@@ -101,20 +98,6 @@ polygon = PackedVector2Array(-363, -4, -339, -30, -322, -12, -299, -32, -279, -1
 position = Vector2(10445, 108)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-363, -4, -339, -30, -322, -12, -299, -32, -279, -11, -246, -34, -228, -17, -197, -34, -175, -15, -148, -34, -130, -13, -102, -36, -79, -15, -53, -34, -30, -12, 0, -37, 31, -14, 71, -37, 92, -18, 124, -34, 152, -12, 186, -32, 211, -15, 248, -34, 271, -13, 313, -36, 329, -15, 357, -38, 373, -1, 373, -1)
-
-[node name="Floor_5" type="ColorRect" parent="." unique_id=1271905561]
-offset_left = 9434.0
-offset_top = -214.0
-offset_right = 9963.0
-offset_bottom = -122.0
-color = Color(0.16862746, 0.4, 0.39607844, 1)
-
-[node name="Floor_6" type="ColorRect" parent="." unique_id=1447912071]
-offset_left = 10219.0
-offset_top = -212.0
-offset_right = 10748.0
-offset_bottom = -120.0
-color = Color(0.16862746, 0.4, 0.39607844, 1)
 
 [node name="Floor_7" type="ColorRect" parent="." unique_id=2112821486]
 offset_left = 1441.0
@@ -168,7 +151,60 @@ offset_top = 25.0
 offset_right = 2672.0
 offset_bottom = 117.0
 color = Color(0.16862746, 0.4, 0.39607844, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor2" unique_id=464887262]
 position = Vector2(2407.5, 66.5)
 shape = SubResource("RectangleShape2D_epypp")
+
+[node name="StaticBodyFloor3" type="StaticBody2D" parent="." unique_id=1738422941]
+
+[node name="Floor_3" type="ColorRect" parent="StaticBodyFloor3" unique_id=1020811222]
+offset_left = 6894.0
+offset_top = 25.0
+offset_right = 7423.0
+offset_bottom = 117.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor3" unique_id=1214066671]
+position = Vector2(7158.5, 66.5)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="StaticBodyFloor4" type="StaticBody2D" parent="." unique_id=1804349423]
+
+[node name="Floor_4" type="ColorRect" parent="StaticBodyFloor4" unique_id=1756041611]
+offset_left = 8717.0
+offset_top = -83.0
+offset_right = 9246.0
+offset_bottom = 9.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor4" unique_id=658907306]
+position = Vector2(8982, -37.5)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="StaticBodyFloor5" type="StaticBody2D" parent="." unique_id=1564735766]
+
+[node name="Floor_5" type="ColorRect" parent="StaticBodyFloor5" unique_id=1271905561]
+offset_left = 9550.0
+offset_top = -214.0
+offset_right = 9760.0
+offset_bottom = -122.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor5" unique_id=1188210934]
+position = Vector2(9655, -168)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="StaticBodyFloor6" type="StaticBody2D" parent="." unique_id=132779383]
+
+[node name="Floor_6" type="ColorRect" parent="StaticBodyFloor6" unique_id=1447912071]
+offset_left = 10195.0
+offset_top = -212.0
+offset_right = 10748.0
+offset_bottom = -120.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor6" unique_id=86409536]
+position = Vector2(10471, -166)
+shape = SubResource("RectangleShape2D_d21ai")
