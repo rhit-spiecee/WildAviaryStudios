@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
 size = Vector2(37, 36)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
+size = Vector2(37, 36)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(10497, 40)
 
@@ -22,6 +25,9 @@ size = Vector2(210, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
 size = Vector2(552, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
+size = Vector2(257, 175)
 
 [node name="Node2D" type="Node2D" unique_id=80878556]
 
@@ -43,6 +49,12 @@ position_smoothing_enabled = true
 position = Vector2(1510.5, 65)
 shape = SubResource("RectangleShape2D_wtcfe")
 
+[node name="PickupDetector" type="Area2D" parent="Calypso2" unique_id=1564213760]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Calypso2/PickupDetector" unique_id=1266200933]
+position = Vector2(1510.5, 65)
+shape = SubResource("RectangleShape2D_4d7sh")
+
 [node name="Spikes_1" type="Polygon2D" parent="." unique_id=296077714]
 position = Vector2(8990, 117)
 color = Color(1, 0, 0, 1)
@@ -63,11 +75,6 @@ polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -20
 position = Vector2(7077, -362)
 color = Color(0.9529412, 0.40784314, 0, 1)
 polygon = PackedVector2Array(498, -204, 501, -301, 429, -337, 496, -396, 600, -396, 651, -351, 590, -301, 593, -185)
-
-[node name="Shrine" type="Polygon2D" parent="." unique_id=859877179]
-position = Vector2(10931, -9)
-color = Color(0, 0.9647059, 0, 1)
-polygon = PackedVector2Array(635, -61, 635, -61, 773, -47, 795, 47, 738, 113, 622, 115, 548, 65)
 
 [node name="Spear" type="Polygon2D" parent="." unique_id=2000447912]
 polygon = PackedVector2Array(57, 117, 100, 117, 107, 123, 102, 128, 57, 128)
@@ -208,3 +215,17 @@ color = Color(0.16862746, 0.4, 0.39607844, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor6" unique_id=86409536]
 position = Vector2(10471, -166)
 shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="ShrineArea" type="Area2D" parent="." unique_id=771166114 groups=["shrine"]]
+position = Vector2(11479, -93)
+
+[node name="Shrine" type="Polygon2D" parent="ShrineArea" unique_id=859877179]
+position = Vector2(-548, 84)
+color = Color(0, 0.9647059, 0, 1)
+polygon = PackedVector2Array(635, -61, 635, -61, 773, -47, 795, 47, 738, 113, 622, 115, 548, 65)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShrineArea" unique_id=790420474]
+position = Vector2(125.5, 113.5)
+shape = SubResource("RectangleShape2D_rj586")
+
+[connection signal="area_entered" from="Calypso2/PickupDetector" to="Calypso2" method="_on_pickup_detector_area_entered"]
