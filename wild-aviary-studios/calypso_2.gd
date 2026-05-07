@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 		elif extra_jumps > 0:
 			velocity.y = JUMP_VELOCITY
-			extra_jumps -= 1
+			extra_jumps -= 2
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
