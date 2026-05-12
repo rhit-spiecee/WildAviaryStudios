@@ -1,12 +1,22 @@
 [gd_scene format=3 uid="uid://dhuthkhcg4wm4"]
 
 [ext_resource type="Script" uid="uid://bqojxtf4bbbb0" path="res://calypso_2.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://bxwt65438r71" path="res://weak_enemy_area_1.gd" id="2_0e48y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
 size = Vector2(37, 36)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
+size = Vector2(50, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
+size = Vector2(51, 12)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
 size = Vector2(37, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
+size = Vector2(60, 59)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(10497, 40)
@@ -61,15 +71,27 @@ position_smoothing_enabled = true
 position = Vector2(1510.5, 65)
 shape = SubResource("RectangleShape2D_wtcfe")
 
-[node name="Left_Spear" type="Polygon2D" parent="Calypso2" unique_id=2000447912]
+[node name="Right_Spear" type="Area2D" parent="Calypso2" unique_id=186868275]
+
+[node name="Right_Spear_Poly" type="Polygon2D" parent="Calypso2/Right_Spear" unique_id=2000447912]
 position = Vector2(1469, -57)
 polygon = PackedVector2Array(57, 117, 100, 117, 107, 123, 102, 128, 57, 128)
 
-[node name="Right_Spear" type="Polygon2D" parent="Calypso2" unique_id=449425014]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Calypso2/Right_Spear" unique_id=1223234345]
+position = Vector2(1551, 65.5)
+shape = SubResource("RectangleShape2D_nr8wp")
+
+[node name="Left_Spear" type="Area2D" parent="Calypso2" unique_id=1670416787]
+
+[node name="Left_Spear_Poly" type="Polygon2D" parent="Calypso2/Left_Spear" unique_id=449425014]
 position = Vector2(1550.9999, 187)
 rotation = 3.1374834
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999999, 0.9999999)
 polygon = PackedVector2Array(57, 117, 100, 117, 107, 123, 102, 128, 57, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Calypso2/Left_Spear" unique_id=833933606]
+position = Vector2(1468.5, 65)
+shape = SubResource("RectangleShape2D_d2bti")
 
 [node name="PickupDetector" type="Area2D" parent="Calypso2" unique_id=1564213760]
 
@@ -77,26 +99,23 @@ polygon = PackedVector2Array(57, 117, 100, 117, 107, 123, 102, 128, 57, 128)
 position = Vector2(1510.5, 65)
 shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="Weak_Enemy_1" type="Polygon2D" parent="." unique_id=1866483654]
-position = Vector2(4589, 160)
-scale = Vector2(0.9104478, 0.7625)
-color = Color(1, 1, 0, 1)
-polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -517.3534, -139.37927, -501, -102)
-
-[node name="Strong_Enemy_1" type="Polygon2D" parent="." unique_id=360975081]
-position = Vector2(3532, -408)
-color = Color(1, 0.29803923, 1, 1)
-polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
-
-[node name="Boss" type="Polygon2D" parent="." unique_id=371283902]
-position = Vector2(7077, -362)
-color = Color(0.9529412, 0.40784314, 0, 1)
-polygon = PackedVector2Array(498, -204, 501, -301, 429, -337, 496, -396, 600, -396, 651, -351, 590, -301, 593, -185)
-
 [node name="Arrow" type="Polygon2D" parent="." unique_id=1114044642]
 position = Vector2(-1338, 89)
 color = Color(1, 0.22745098, 0.3254902, 1)
 polygon = PackedVector2Array(1651, 31, 1602, 32, 1601, 38, 1594, 26, 1605, 19, 1603, 24)
+
+[node name="Weak_Enemy_Area1" type="Area2D" parent="." unique_id=408494677]
+script = ExtResource("2_0e48y")
+
+[node name="Weak_Enemy_1" type="Polygon2D" parent="Weak_Enemy_Area1" unique_id=1866483654]
+position = Vector2(4588, 182)
+scale = Vector2(0.9104478, 0.7625)
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -517.3534, -139.37927, -501, -102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weak_Enemy_Area1" unique_id=1065750640]
+position = Vector2(4102, 76)
+shape = SubResource("RectangleShape2D_ta5nu")
 
 [node name="Weak_Enemy_2" type="Polygon2D" parent="." unique_id=1227202487]
 position = Vector2(6920, 173)
@@ -110,6 +129,11 @@ scale = Vector2(0.9104478, 0.7625)
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -517.3534, -139.37927, -501, -102)
 
+[node name="Strong_Enemy_1" type="Polygon2D" parent="." unique_id=360975081]
+position = Vector2(3532, -408)
+color = Color(1, 0.29803923, 1, 1)
+polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
+
 [node name="Strong_Enemy_2" type="Polygon2D" parent="." unique_id=1368827350]
 position = Vector2(5064, -408)
 color = Color(1, 0.29803923, 1, 1)
@@ -119,6 +143,11 @@ polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -20
 position = Vector2(5662, -496)
 color = Color(1, 0.29803923, 1, 1)
 polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
+
+[node name="Boss" type="Polygon2D" parent="." unique_id=371283902]
+position = Vector2(7077, -362)
+color = Color(0.9529412, 0.40784314, 0, 1)
+polygon = PackedVector2Array(498, -204, 501, -301, 429, -337, 496, -396, 600, -396, 651, -351, 590, -301, 593, -185)
 
 [node name="StaticBodyFloor1" type="StaticBody2D" parent="." unique_id=1734973019]
 

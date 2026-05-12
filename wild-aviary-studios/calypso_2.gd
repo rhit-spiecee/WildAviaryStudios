@@ -3,17 +3,26 @@ extends CharacterBody2D
 const SPEED = 350.0
 const JUMP_VELOCITY = -650.0
 
-@onready var left_spear = $Left_Spear
-@onready var right_spear = $Right_Spear
-
 var extra_jumps = 0
 var max_extra_jumps = 0
+
+@onready var left_spear: Area2D = $Left_Spear
+@onready var right_spear: Area2D = $Right_Spear
+
+@onready var left_spear_collision: CollisionShape2D = $Left_Spear/CollisionShape2D
+@onready var right_spear_collision: CollisionShape2D = $Right_Spear/CollisionShape2D
 
 var spear_on_cooldown := false
 
 func _ready() -> void:
 	left_spear.visible = false
 	right_spear.visible = false
+
+	left_spear.monitoring = false
+	right_spear.monitoring = false
+
+	left_spear_collision.disabled = true
+	right_spear_collision.disabled = true
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -35,14 +44,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	if Input.is_action_just_pressed("spear_right"):
-		use_spear(left_spear)
+		use_spear(right_spear)
 
 	if Input.is_action_just_pressed("spear_left"):
-		use_spear(right_spear)
+		use_spear(left_spear)
 
 	move_and_slide()
 
-func use_spear(spear: Node2D) -> void:
+func use_spear(spear: Area2D) -> void:
 	if spear_on_cooldown:
 		return
 
@@ -50,11 +59,28 @@ func use_spear(spear: Node2D) -> void:
 
 	left_spear.visible = false
 	right_spear.visible = false
+	left_spear.monitoring = false
+	right_spear.monitoring = false
+	left_spear_collision.disabled = true
+	right_spear_collision.disabled = true
 
 	spear.visible = true
+	spear.monitoring = true
+
+	if spear == left_spear:
+		left_spear_collision.disabled = false
+	else:
+		right_spear_collision.disabled = false
 
 	await get_tree().create_timer(0.5).timeout
+
 	spear.visible = false
+	spear.monitoring = false
+
+	if spear == left_spear:
+		left_spear_collision.disabled = true
+	else:
+		right_spear_collision.disabled = true
 
 	await get_tree().create_timer(1.0).timeout
 	spear_on_cooldown = false
