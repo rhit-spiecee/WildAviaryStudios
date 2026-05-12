@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 325.0
+const SPEED = 350.0
 const JUMP_VELOCITY = -650.0
 
 @onready var left_spear = $Left_Spear

@@ -33,10 +33,13 @@ size = Vector2(257, 175)
 size = Vector2(529, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
-size = Vector2(6766, 40)
+size = Vector2(6738, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ka3"]
 size = Vector2(527, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
+size = Vector2(37, 320)
 
 [node name="Node2D" type="Node2D" unique_id=80878556]
 
@@ -74,11 +77,6 @@ polygon = PackedVector2Array(57, 117, 100, 117, 107, 123, 102, 128, 57, 128)
 position = Vector2(1510.5, 65)
 shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="Spikes_1" type="Polygon2D" parent="." unique_id=296077714]
-position = Vector2(8990, 117)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-363, -4, -339, -30, -322, -12, -299, -32, -279, -11, -246, -34, -228, -17, -197, -34, -175, -15, -148, -34, -130, -13, -102, -36, -79, -15, -53, -34, -30, -12, 0, -37, 31, -14, 71, -37, 92, -18, 124, -34, 152, -12, 186, -32, 211, -15, 248, -34, 271, -13, 313, -36, 329, -15, 357, -38, 373, -1, 373, -1)
-
 [node name="Weak_Enemy_1" type="Polygon2D" parent="." unique_id=1866483654]
 position = Vector2(4589, 160)
 scale = Vector2(0.9104478, 0.7625)
@@ -111,16 +109,6 @@ position = Vector2(7631, 90)
 scale = Vector2(0.9104478, 0.7625)
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -517.3534, -139.37927, -501, -102)
-
-[node name="Spikes_2" type="Polygon2D" parent="." unique_id=2053936750]
-position = Vector2(9717, 110)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-363, -4, -339, -30, -322, -12, -299, -32, -279, -11, -246, -34, -228, -17, -197, -34, -175, -15, -148, -34, -130, -13, -102, -36, -79, -15, -53, -34, -30, -12, 0, -37, 31, -14, 71, -37, 92, -18, 124, -34, 152, -12, 186, -32, 211, -15, 248, -34, 271, -13, 313, -36, 329, -15, 357, -38, 373, -1, 373, -1)
-
-[node name="Spikes_3" type="Polygon2D" parent="." unique_id=1482382674]
-position = Vector2(10445, 108)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-363, -4, -339, -30, -322, -12, -299, -32, -279, -11, -246, -34, -228, -17, -197, -34, -175, -15, -148, -34, -130, -13, -102, -36, -79, -15, -53, -34, -30, -12, 0, -37, 31, -14, 71, -37, 92, -18, 124, -34, 152, -12, 186, -32, 211, -15, 248, -34, 271, -13, 313, -36, 329, -15, 357, -38, 373, -1, 373, -1)
 
 [node name="Strong_Enemy_2" type="Polygon2D" parent="." unique_id=1368827350]
 position = Vector2(5064, -408)
@@ -201,14 +189,14 @@ shape = SubResource("RectangleShape2D_kdubu")
 [node name="StaticBodyFloor6" type="StaticBody2D" parent="." unique_id=132779383]
 
 [node name="Floor_6" type="ColorRect" parent="StaticBodyFloor6" unique_id=1447912071]
-offset_left = 10195.0
+offset_left = 10227.0
 offset_top = -212.0
-offset_right = 10748.0
+offset_right = 10780.0
 offset_bottom = -120.0
 color = Color(0.16862746, 0.4, 0.39607844, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor6" unique_id=86409536]
-position = Vector2(10471, -166)
+position = Vector2(10503, -166)
 shape = SubResource("RectangleShape2D_d21ai")
 
 [node name="ShrineArea" type="Area2D" parent="." unique_id=771166114 groups=["shrine"]]
@@ -241,12 +229,12 @@ shape = SubResource("RectangleShape2D_ir8iy")
 [node name="Floor_8" type="ColorRect" parent="StaticBodyFloor8" unique_id=516559695]
 offset_left = 2090.0
 offset_top = -549.0
-offset_right = 8856.0
+offset_right = 8828.0
 offset_bottom = -509.0
 color = Color(0.16862746, 0.4, 0.39607844, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor8" unique_id=1516010816]
-position = Vector2(5473, -529)
+position = Vector2(5459, -529)
 shape = SubResource("RectangleShape2D_hqns4")
 
 [node name="StaticBodyFloor9" type="StaticBody2D" parent="." unique_id=91064728]
@@ -261,5 +249,18 @@ color = Color(0.16862746, 0.4, 0.39607844, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor9" unique_id=2010120937]
 position = Vector2(5361.5, -589)
 shape = SubResource("RectangleShape2D_x0ka3")
+
+[node name="StaticBodyFloor10" type="StaticBody2D" parent="." unique_id=1844945465]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor10" unique_id=835066959]
+position = Vector2(10766.5, -52)
+shape = SubResource("RectangleShape2D_0h7mo")
+
+[node name="Floor_10" type="ColorRect" parent="StaticBodyFloor10" unique_id=745133405]
+offset_left = 10748.0
+offset_top = -212.0
+offset_right = 10785.0
+offset_bottom = 109.0
+color = Color(0.16862746, 0.4, 0.39607844, 1)
 
 [connection signal="area_entered" from="Calypso2/PickupDetector" to="Calypso2" method="_on_pickup_detector_area_entered"]
