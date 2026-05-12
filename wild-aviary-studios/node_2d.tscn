@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bqojxtf4bbbb0" path="res://calypso_2.gd" id="1_wtcfe"]
 [ext_resource type="Script" uid="uid://bxwt65438r71" path="res://weak_enemy_area_1.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://babma0ky80wvv" path="res://weak_enemy_area_2.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://cdstc3spktrux" path="res://weak_enemy_area_3.gd" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://djd52j32nt2yb" path="res://area_2d_strong_enemy_1.gd" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://cor8v15gghy8r" path="res://area_2d_strong_enemy_2.gd" id="6_kdubu"]
+[ext_resource type="Script" uid="uid://b1xwo5sqlog2d" path="res://area_2d_strong_enemy_3.gd" id="7_d21ai"]
+[ext_resource type="Script" uid="uid://civoi81wv4w6x" path="res://area_2d_boss.gd" id="8_rj586"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
 size = Vector2(37, 36)
@@ -17,6 +23,24 @@ size = Vector2(37, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
 size = Vector2(60, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(61, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k73cj"]
+size = Vector2(62, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjqkl"]
+size = Vector2(191, 103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs4d3"]
+size = Vector2(202, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vxoj"]
+size = Vector2(199, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei405"]
+size = Vector2(94, 206.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(10497, 40)
@@ -117,37 +141,79 @@ polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -51
 position = Vector2(4102, 76)
 shape = SubResource("RectangleShape2D_ta5nu")
 
-[node name="Weak_Enemy_2" type="Polygon2D" parent="." unique_id=1227202487]
-position = Vector2(6920, 173)
+[node name="Weak_Enemy_Area2" type="Area2D" parent="." unique_id=1808633572]
+script = ExtResource("3_epypp")
+
+[node name="Weak_Enemy_2" type="Polygon2D" parent="Weak_Enemy_Area2" unique_id=1227202487]
+position = Vector2(6921, 182.99998)
 scale = Vector2(0.9104478, 0.7625)
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -517.3534, -139.37927, -501, -102)
 
-[node name="Weak_Enemy_3" type="Polygon2D" parent="." unique_id=653155483]
-position = Vector2(7631, 90)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weak_Enemy_Area2" unique_id=1711120377]
+position = Vector2(6434.5, 74.5)
+shape = SubResource("RectangleShape2D_flf07")
+
+[node name="Weak_Enemy_Area3" type="Area2D" parent="." unique_id=455050472]
+script = ExtResource("4_0hol4")
+
+[node name="Weak_Enemy_3" type="Polygon2D" parent="Weak_Enemy_Area3" unique_id=653155483]
+position = Vector2(7630, 99.99999)
 scale = Vector2(0.9104478, 0.7625)
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -517.3534, -139.37927, -501, -102)
 
-[node name="Strong_Enemy_1" type="Polygon2D" parent="." unique_id=360975081]
-position = Vector2(3532, -408)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weak_Enemy_Area3" unique_id=1571445199]
+position = Vector2(7143, -8)
+shape = SubResource("RectangleShape2D_k73cj")
+
+[node name="Area2D_Strong_Enemy1" type="Area2D" parent="." unique_id=1890218130]
+script = ExtResource("5_q6r6c")
+
+[node name="Strong_Enemy_1" type="Polygon2D" parent="Area2D_Strong_Enemy1" unique_id=360975081]
+position = Vector2(3532, -388)
 color = Color(1, 0.29803923, 1, 1)
 polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
 
-[node name="Strong_Enemy_2" type="Polygon2D" parent="." unique_id=1368827350]
-position = Vector2(5064, -408)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Strong_Enemy1" unique_id=1459000574]
+position = Vector2(3223.5, -602.5)
+shape = SubResource("RectangleShape2D_rjqkl")
+
+[node name="Area2D_Strong_Enemy2" type="Area2D" parent="." unique_id=273513700]
+script = ExtResource("6_kdubu")
+
+[node name="Strong_Enemy_2" type="Polygon2D" parent="Area2D_Strong_Enemy2" unique_id=1368827350]
+position = Vector2(5065, -388)
 color = Color(1, 0.29803923, 1, 1)
 polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
 
-[node name="Strong_Enemy_3" type="Polygon2D" parent="." unique_id=722329513]
-position = Vector2(5662, -496)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Strong_Enemy2" unique_id=1559087623]
+position = Vector2(4754, -602.5)
+shape = SubResource("RectangleShape2D_fs4d3")
+
+[node name="Area2D_Strong_Enemy3" type="Area2D" parent="." unique_id=1911015600]
+script = ExtResource("7_d21ai")
+
+[node name="Strong_Enemy_3" type="Polygon2D" parent="Area2D_Strong_Enemy3" unique_id=722329513]
+position = Vector2(5665, -471)
 color = Color(1, 0.29803923, 1, 1)
 polygon = PackedVector2Array(-341, -169, -418, -208, -359, -263, -242, -264, -204, -218, -247, -164)
 
-[node name="Boss" type="Polygon2D" parent="." unique_id=371283902]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Strong_Enemy3" unique_id=626517954]
+position = Vector2(5355, -685.5)
+shape = SubResource("RectangleShape2D_7vxoj")
+
+[node name="Area2D_Boss" type="Area2D" parent="." unique_id=911698329]
+script = ExtResource("8_rj586")
+
+[node name="Boss" type="Polygon2D" parent="Area2D_Boss" unique_id=371283902]
 position = Vector2(7077, -362)
 color = Color(0.9529412, 0.40784314, 0, 1)
-polygon = PackedVector2Array(498, -204, 501, -301, 429, -337, 496, -396, 600, -396, 651, -351, 590, -301, 593, -185)
+polygon = PackedVector2Array(498, -204, 501, -301, 480, -342, 496, -396, 600, -396, 605, -341, 590, -301, 593, -185)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Boss" unique_id=1034087886]
+position = Vector2(7622, -655)
+shape = SubResource("RectangleShape2D_ei405")
 
 [node name="StaticBodyFloor1" type="StaticBody2D" parent="." unique_id=1734973019]
 
