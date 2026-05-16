@@ -3,7 +3,7 @@ extends Area2D
 @export var health := 3
 @export var arrow_scene: PackedScene = preload("res://Arrow.tscn")
 @export var detection_range := 400.0
-@export var shoot_cooldown := 3
+@export var shoot_cooldown := 2.25
 var player_position_offset := Vector2(1510.5, 65.0)
 
 var can_take_damage := true
