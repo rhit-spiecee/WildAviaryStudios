@@ -77,7 +77,7 @@ size = Vector2(37, 320)
 
 [node name="Node2D" type="Node2D" unique_id=80878556]
 
-[node name="Calypso2" type="CharacterBody2D" parent="." unique_id=1342976764]
+[node name="Calypso2" type="CharacterBody2D" parent="." unique_id=1342976764 groups=["player"]]
 script = ExtResource("1_wtcfe")
 
 [node name="Calypso" type="ColorRect" parent="Calypso2" unique_id=537163826]
@@ -123,22 +123,16 @@ shape = SubResource("RectangleShape2D_d2bti")
 position = Vector2(1510.5, 65)
 shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="Arrow" type="Polygon2D" parent="." unique_id=1114044642]
-position = Vector2(-1338, 89)
-color = Color(1, 0.22745098, 0.3254902, 1)
-polygon = PackedVector2Array(1651, 31, 1602, 32, 1601, 38, 1594, 26, 1605, 19, 1603, 24)
-
 [node name="Weak_Enemy_Area1" type="Area2D" parent="." unique_id=408494677]
+position = Vector2(4133, 98)
 script = ExtResource("2_0e48y")
 
-[node name="Weak_Enemy_1" type="Polygon2D" parent="Weak_Enemy_Area1" unique_id=1866483654]
-position = Vector2(4588, 182)
-scale = Vector2(0.9104478, 0.7625)
+[node name="Weak_Enemy_1" type="Polygon2D" parent="Weak_Enemy_Area1" unique_id=327292319]
 color = Color(1, 1, 0, 1)
-polygon = PackedVector2Array(-568, -105, -551.24207, -145.32373, -536, -182, -517.3534, -139.37927, -501, -102)
+polygon = PackedVector2Array(-32, -53, -32, 9, 28, 8, 29, -51)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weak_Enemy_Area1" unique_id=1065750640]
-position = Vector2(4102, 76)
+position = Vector2(-2, -22)
 shape = SubResource("RectangleShape2D_ta5nu")
 
 [node name="Weak_Enemy_Area2" type="Area2D" parent="." unique_id=1808633572]
@@ -225,7 +219,7 @@ offset_bottom = 148.0
 color = Color(0.16862746, 0.4, 0.39607844, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor1" unique_id=894224618]
-position = Vector2(6532.5, 128)
+position = Vector2(6533.5, 128)
 shape = SubResource("RectangleShape2D_0e48y")
 
 [node name="StaticBodyFloor2" type="StaticBody2D" parent="." unique_id=77894337]

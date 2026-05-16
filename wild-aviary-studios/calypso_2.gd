@@ -15,19 +15,13 @@ var max_extra_jumps = 0
 var spear_on_cooldown := false
 
 func _ready() -> void:
-	left_spear.visible = false
-	right_spear.visible = false
-
-	left_spear.monitoring = false
-	right_spear.monitoring = false
-
-	left_spear_collision.disabled = true
-	right_spear_collision.disabled = true
+	add_to_group("player")
+	hide_spears()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	else: 
+	else:
 		extra_jumps = max_extra_jumps
 
 	if Input.is_action_just_pressed("ui_accept"):
@@ -35,9 +29,10 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 		elif extra_jumps > 0:
 			velocity.y = JUMP_VELOCITY
-			extra_jumps -= 2
+			extra_jumps -= 1
 
 	var direction := Input.get_axis("ui_left", "ui_right")
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -51,18 +46,23 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func hide_spears() -> void:
+	left_spear.visible = false
+	right_spear.visible = false
+
+	left_spear.monitoring = false
+	right_spear.monitoring = false
+
+	left_spear_collision.disabled = true
+	right_spear_collision.disabled = true
+
 func use_spear(spear: Area2D) -> void:
 	if spear_on_cooldown:
 		return
 
 	spear_on_cooldown = true
 
-	left_spear.visible = false
-	right_spear.visible = false
-	left_spear.monitoring = false
-	right_spear.monitoring = false
-	left_spear_collision.disabled = true
-	right_spear_collision.disabled = true
+	hide_spears()
 
 	spear.visible = true
 	spear.monitoring = true
@@ -74,13 +74,7 @@ func use_spear(spear: Area2D) -> void:
 
 	await get_tree().create_timer(0.5).timeout
 
-	spear.visible = false
-	spear.monitoring = false
-
-	if spear == left_spear:
-		left_spear_collision.disabled = true
-	else:
-		right_spear_collision.disabled = true
+	hide_spears()
 
 	await get_tree().create_timer(1.0).timeout
 	spear_on_cooldown = false

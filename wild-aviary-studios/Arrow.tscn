@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b7af1ssmby4or"]
+
+[ext_resource type="Script" uid="uid://nuwvqby28028" path="res://arrow.gd" id="1_dece2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gw7c"]
+size = Vector2(54, 14)
+
+[node name="Arrow" type="Area2D" unique_id=1475124404]
+script = ExtResource("1_dece2")
+
+[node name="Arrow_Poly" type="Polygon2D" parent="." unique_id=464016844]
+position = Vector2(-1624, -30)
+color = Color(1, 0.22745098, 0.3254902, 1)
+polygon = PackedVector2Array(1651, 31, 1602, 32, 1601, 38, 1594, 26, 1605, 19, 1603, 24, 1613.9121, 25.59137)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=776208610]
+shape = SubResource("RectangleShape2D_0gw7c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

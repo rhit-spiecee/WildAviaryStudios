@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://tagesq3devus"]
+
+[ext_resource type="PackedScene" uid="uid://b7af1ssmby4or" path="res://Arrow.tscn" id="1_eyvl2"]
+
+[node name="Node2D" type="Node2D" unique_id=381814614]
+
+[node name="Arrow" parent="." unique_id=1475124404 instance=ExtResource("1_eyvl2")]
